@@ -47,11 +47,12 @@ htmlcov/
 # Project data
 data/
 
-# ML model checkpoints (large binary files)
+# ML model checkpoints
 *.pt
 *.pth
 *.ckpt
 *.safetensors
+log_tensorboard/
 
 # MLflow tracking database
 mlflow.db
