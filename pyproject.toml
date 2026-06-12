@@ -3,7 +3,8 @@ name = "amazon-item-recommender"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "pandas",
+    # For compatibility with recbole
+    "pandas<=2.3.2",
     "numpy",
     "torch<=2.5",
     "matplotlib",
@@ -12,5 +13,6 @@ dependencies = [
     "datasets",
     "ipykernel",
     "recbole",
+    # For compatibility with recbole
     "kmeans-pytorch"
 ]
