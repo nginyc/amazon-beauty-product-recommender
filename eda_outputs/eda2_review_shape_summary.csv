@@ -1,0 +1,4 @@
+domain,rows_all_time,rows_2020_2022,unique_users_2020_2022,unique_asin_2020_2022,unique_parent_asin_2020_2022,missing_parent_asin_pct_2020_2022,empty_text_pct_2020_2022,review_image_pct_2020_2022,parents_missing_metadata_rows,parents_missing_metadata_row_pct,scan_seconds
+Beauty_and_Personal_Care,23911390,10959505,6155154,844360,596172,0.0,0.2512,9.9014,0,0.0,99.6
+Clothing_Shoes_and_Jewelry,66033346,29078609,12819316,8277638,3096426,0.0,0.2653,7.8107,0,0.0,260.0
+Sports_and_Outdoors,19595170,7248483,4806512,1091805,691739,0.0,0.1913,8.8724,0,0.0,76.0

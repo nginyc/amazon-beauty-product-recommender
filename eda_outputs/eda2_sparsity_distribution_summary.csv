@@ -1,0 +1,4 @@
+domain,rows_2020_2022,unique_users,unique_asin,unique_parent_asin,user_interactions_mean,user_interactions_median,user_interactions_p90,user_interactions_p99,parent_reviews_mean,parent_reviews_median,parent_reviews_p90,parent_reviews_p99,parent_reviews_max,rating_1_count,rating_2_count,rating_3_count,rating_4_count,rating_5_count
+Beauty_and_Personal_Care,10959505,6155154,844360,596172,1.781,1,3,10,18.383,3,27,276,26105,1545280,611330,779362,1047743,6975790
+Clothing_Shoes_and_Jewelry,29078609,12819316,8277638,3096426,2.268,1,4,14,9.391,1,10,142,207693,3072719,1706642,2443207,3380725,18475316
+Sports_and_Outdoors,7248483,4806512,1091805,691739,1.508,1,2,7,10.479,2,16,145,10648,867146,379106,490454,780933,4730844

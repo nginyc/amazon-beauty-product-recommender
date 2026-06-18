@@ -1,0 +1,4 @@
+domain,metadata_rows,unique_parent_asin,duplicate_parent_asin,missing_parent_asin_pct,empty_title_pct,empty_features_pct,empty_description_pct,empty_price_pct,usable_image_pct,embedding_text_pct,text_len_median,text_len_p90,text_len_p99
+Beauty_and_Personal_Care,1028914,1028914,0,0.0,0.005,27.537,45.149,63.002,99.992,99.999,627,2022,3312
+Clothing_Shoes_and_Jewelry,7218481,7218481,0,0.0,0.008,10.317,47.448,79.546,99.861,99.999,541,1698,3476
+Sports_and_Outdoors,1587421,1587421,0,0.0,0.007,16.919,34.837,69.426,99.966,99.999,591,1864,3448

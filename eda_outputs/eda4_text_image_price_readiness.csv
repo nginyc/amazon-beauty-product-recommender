@@ -1,0 +1,4 @@
+domain,metadata_rows,empty_title_pct,empty_features_pct,empty_description_pct,embedding_text_pct,text_len_median,text_len_p90,text_len_p99,metadata_usable_image_pct,review_image_pct_2020_2022,empty_price_pct
+Beauty_and_Personal_Care,1028914,0.0052,27.5373,45.1489,99.9989,627,2022,3312,99.9922,9.9014,63.0018
+Clothing_Shoes_and_Jewelry,7218481,0.0082,10.3165,47.4484,99.9993,541,1698,3476,99.8608,7.8107,79.546
+Sports_and_Outdoors,1587421,0.0071,16.9191,34.8365,99.9988,591,1864,3448,99.966,8.8724,69.4262

@@ -1,0 +1,61 @@
+domain,main_category,count,pct
+Beauty_and_Personal_Care,All Beauty,737549,71.6823
+Beauty_and_Personal_Care,(null),102896,10.0004
+Beauty_and_Personal_Care,Health & Personal Care,71800,6.9782
+Beauty_and_Personal_Care,Premium Beauty,34898,3.3917
+Beauty_and_Personal_Care,Amazon Home,32143,3.124
+Beauty_and_Personal_Care,Tools & Home Improvement,14387,1.3983
+Beauty_and_Personal_Care,AMAZON FASHION,13055,1.2688
+Beauty_and_Personal_Care,Industrial & Scientific,4901,0.4763
+Beauty_and_Personal_Care,Sports & Outdoors,2425,0.2357
+Beauty_and_Personal_Care,Grocery,2181,0.212
+Beauty_and_Personal_Care,Toys & Games,2066,0.2008
+Beauty_and_Personal_Care,"Arts, Crafts & Sewing",2049,0.1991
+Beauty_and_Personal_Care,Office Products,1696,0.1648
+Beauty_and_Personal_Care,Cell Phones & Accessories,1222,0.1188
+Beauty_and_Personal_Care,All Electronics,1003,0.0975
+Beauty_and_Personal_Care,Baby,855,0.0831
+Beauty_and_Personal_Care,Pet Supplies,764,0.0743
+Beauty_and_Personal_Care,Computers,629,0.0611
+Beauty_and_Personal_Care,Musical Instruments,599,0.0582
+Beauty_and_Personal_Care,Automotive,374,0.0363
+Clothing_Shoes_and_Jewelry,AMAZON FASHION,6038522,83.6536
+Clothing_Shoes_and_Jewelry,(null),929740,12.88
+Clothing_Shoes_and_Jewelry,Sports & Outdoors,66396,0.9198
+Clothing_Shoes_and_Jewelry,Amazon Home,41040,0.5685
+Clothing_Shoes_and_Jewelry,Books,24694,0.3421
+Clothing_Shoes_and_Jewelry,Tools & Home Improvement,21327,0.2954
+Clothing_Shoes_and_Jewelry,All Beauty,20290,0.2811
+Clothing_Shoes_and_Jewelry,Toys & Games,19927,0.2761
+Clothing_Shoes_and_Jewelry,Office Products,11490,0.1592
+Clothing_Shoes_and_Jewelry,Health & Personal Care,11008,0.1525
+Clothing_Shoes_and_Jewelry,"Arts, Crafts & Sewing",8242,0.1142
+Clothing_Shoes_and_Jewelry,Baby,6188,0.0857
+Clothing_Shoes_and_Jewelry,Automotive,4978,0.069
+Clothing_Shoes_and_Jewelry,Industrial & Scientific,4210,0.0583
+Clothing_Shoes_and_Jewelry,Cell Phones & Accessories,3079,0.0427
+Clothing_Shoes_and_Jewelry,Computers,2172,0.0301
+Clothing_Shoes_and_Jewelry,All Electronics,1345,0.0186
+Clothing_Shoes_and_Jewelry,Musical Instruments,1220,0.0169
+Clothing_Shoes_and_Jewelry,Handmade,580,0.008
+Clothing_Shoes_and_Jewelry,Home Audio & Theater,539,0.0075
+Sports_and_Outdoors,Sports & Outdoors,870267,54.8227
+Sports_and_Outdoors,AMAZON FASHION,259564,16.3513
+Sports_and_Outdoors,(null),249954,15.7459
+Sports_and_Outdoors,Amazon Home,74995,4.7243
+Sports_and_Outdoors,Automotive,45629,2.8744
+Sports_and_Outdoors,Tools & Home Improvement,25580,1.6114
+Sports_and_Outdoors,Toys & Games,12477,0.786
+Sports_and_Outdoors,Industrial & Scientific,9081,0.5721
+Sports_and_Outdoors,Pet Supplies,7999,0.5039
+Sports_and_Outdoors,Cell Phones & Accessories,6905,0.435
+Sports_and_Outdoors,Health & Personal Care,6894,0.4343
+Sports_and_Outdoors,All Electronics,3235,0.2038
+Sports_and_Outdoors,Office Products,2588,0.163
+Sports_and_Outdoors,Camera & Photo,1899,0.1196
+Sports_and_Outdoors,"Arts, Crafts & Sewing",1883,0.1186
+Sports_and_Outdoors,All Beauty,1309,0.0825
+Sports_and_Outdoors,Sports Collectibles,1230,0.0775
+Sports_and_Outdoors,Books,1214,0.0765
+Sports_and_Outdoors,Computers,971,0.0612
+Sports_and_Outdoors,Grocery,867,0.0546

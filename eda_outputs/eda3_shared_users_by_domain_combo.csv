@@ -1,0 +1,8 @@
+user_group,count
+Beauty only,2539588
+Clothing only,8039576
+Sports only,2086367
+Beauty + Clothing,2363304
+Beauty + Sports,303709
+Clothing + Sports,1467883
+Beauty + Clothing + Sports,948553
