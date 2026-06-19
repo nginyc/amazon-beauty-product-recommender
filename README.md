@@ -48,18 +48,15 @@ Loads gzipped JSONL metadata files and keeps only items that appear in the revie
 
 ### 4. Prepare RecBole atomic files — `preprocess/prepare-atomic-files.ipynb`
 
-Maps string user/item IDs to integers, splits temporally (80/10/10), labels users as warm (≥5 train reviews) / cold / new, builds sequential item histories (capped at 50), and writes RecBole-format atomic files for two dataset variants:
+Maps string user/item IDs to integers, splits temporally (80/10/10), labels users as warm (≥10 train reviews) / cold, builds sequential item histories (capped at 50), and writes RecBole-format atomic files.
 
-- **`data/target/`** — target-category items only in the history sequence
-- **`data/cross/`** — cross-category items in the history sequence
-
-Output files per variant:
-- `{Dataset}.train.inter`, `{Dataset}.valid.inter`, `{Dataset}.test.inter` (tab-separated with columns `user_id:token`, `item_id:token`, `rating:float`, `timestamp:float`, `item_id_list:token_seq`)
-- `{Dataset}.user` with warm/cold/new category labels
-- `{Dataset}.item` with an `is_target` flag
+Output files:
+- `target.train.inter`, `target.valid.inter`, `target.test.inter` (tab-separated with columns `user_id:token`, `item_id:token`, `rating:float`, `timestamp:float`, `item_id_list:token_seq`)
+- `target.user` with warm/cold category labels
+- `target.item` with item features (`price`, `store`)
 
 - **Input:** `data/reviews.csv` and `data/items.csv`
-- **Outputs:** Atomic files under `data/target/` and `data/cross/`
+- **Outputs:** Atomic files under `data/target/`
 
 ### 5. Train models
 
