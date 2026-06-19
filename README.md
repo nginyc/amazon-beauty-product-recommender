@@ -73,10 +73,6 @@ Trains a **Pop** (most popular) baseline. Non-learned — computes item populari
 
 Trains a **BPR** (Bayesian Personalized Ranking) model — a general (non-sequential) collaborative filtering baseline.
 
-#### `train/train-sasrec.ipynb`
-
-Trains a **SASRec** (Self-Attentive Sequential Recommendation) model — uses sequential user item histories with self-attention.
-
 #### `train/train-dssm.ipynb`
 
 Trains a **DSSM** (Deep Structured Semantic Model) — a context-aware model that also incorporates item features (`price`, `store`) from the `.item` atomic file.
