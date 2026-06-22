@@ -30,7 +30,7 @@ Run the notebooks in this order: preparation → training. The EDA notebook is o
 
 ### 1. EDA (optional) — `eda/eda_beauty.ipynb`
 
-Run all cells to load reviews, visualize user segments (warm / cold / new) across temporally-ordered train/valid/test splits, and explore the data. This step creates no output files.
+Run all cells to load reviews, visualize user segments (warm / cold) and item segments (warm / cold) across temporally-ordered train/valid/test splits, and explore the data. This step creates no output files.
 
 ### 2. Process reviews — `preprocess/process-reviews-jsonl.ipynb`
 
@@ -48,19 +48,19 @@ Loads gzipped JSONL metadata files and keeps only items that appear in the revie
 
 ### 4. Prepare RecBole atomic files — `preprocess/prepare-beauty-atomic-files.ipynb`
 
-Filters to Beauty and Personal Care only, drops users with fewer than 5 reviews, maps string user/item IDs to integers, splits temporally (80/10/10 — train by 2022-08-01, valid by 2022-10-01), labels users as warm (≥10 train reviews) / cold, and writes RecBole-format atomic files.
+Filters to Beauty and Personal Care only, drops users and items with fewer than 5 reviews, maps string user/item IDs to integers, splits temporally (80/10/10 — train by 2022-08-01, valid by 2022-10-01), labels users as warm (≥10 train reviews) / cold and items as warm (≥5 train reviews) / cold, and writes RecBole-format atomic files.
 
 Output files:
-- `beauty.train.inter`, `beauty.valid.inter`, `beauty.test.inter` (tab-separated with columns `user_id:token`, `item_id:token`, `rating:float`, `timestamp:float`, `item_id_list:token_seq`)
-- `beauty.user` with warm/cold category labels
-- `beauty.item` with item features (`price`, `store`)
+- `beauty.train.inter`, `beauty.valid.inter`, `beauty.test.inter` (tab-separated with columns `user_id:token`, `item_id:token`, `rating:float`, `timestamp:float`)
+- `beauty.user` with warm (0) / cold (1) labels
+- `beauty.item` with `title`, `store`, `price`, and warm (0) / cold (1) labels
 
 - **Input:** `data/reviews.csv` and `data/items.csv`
 - **Outputs:** Atomic files under `data/beauty/`
 
 ### 5. Train models
 
-All training notebooks load the prepared atomic files via RecBole, train a model, print the best validation score (NDCG@20), and evaluate on the test set for NDCG@20, Recall@20, and MRR@20 — both overall and per user segment (warm / cold / new). Model checkpoints are saved to `saved/{Model}-{timestamp}.pth`.
+All training notebooks load the prepared atomic files via RecBole, train a model, print the best validation score (NDCG@20), and evaluate on the test set for NDCG@20, Recall@20, and MRR@20 — both overall and per user segment (warm / cold). Model checkpoints are saved to `saved/{Model}-{timestamp}.pth`.
 
 #### `train/train-pop.ipynb`
 
@@ -80,6 +80,6 @@ Trains for up to 200 epochs with 3 layers and uses NDCG@20 for early stopping.
 
 Trains a **Mean-Pool Title** model — a custom non-learned baseline that encodes item titles with BGE sentence embeddings, represents each user as the mean of their training item embeddings, and scores via dot product. Trains for 1 epoch (centroid computation only).
 
-#### `train/train-dense-two-tower.ipynb`
+#### `train/train-cbpr.ipynb`
 
-Trains a **Dense Two-Tower** model — a learned two-tower architecture with a frozen BGE item title encoder (`BAAI/bge-base-en-v1.5`) feeding a trainable projection MLP, and a learned user embedding tower with an MLP. Uses InfoNCE loss with in-batch negatives.
+Trains a **CBPR** (Content BPR) model — a VBPR-style two-pathway recommender that combines collaborative user/item embeddings with BGE text content projected through a learned matrix. Scores are the sum of collaborative and content dot products. Uses BPR pairwise ranking loss with negative sampling. Content embedding dimension is 16.
