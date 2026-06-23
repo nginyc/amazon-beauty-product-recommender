@@ -111,6 +111,6 @@ Trains a **Mean-Pool Title** model — a custom non-learned baseline that encode
 
 Trains a **CBPR** (Content BPR) model — a VBPR-style two-pathway recommender that combines collaborative user/item embeddings with BGE text content projected through a learned matrix. Scores are the sum of collaborative and content dot products.
 
-#### `train/train-bpr-multimodal-hybrid.ipynb`
+#### `train/train-bpr-clip-hybrid.ipynb`
 
 Trains a **BPR + CLIP multimodal late fusion** model — a standard BPR model whose predictions are blended at inference time with frozen CLIP text+image content scores via per-user z-score normalization. 
