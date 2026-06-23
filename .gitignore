@@ -71,3 +71,6 @@ mlruns/
 
 # LLM
 .claude/
+
+# Random Files
+tmp.ipynb
