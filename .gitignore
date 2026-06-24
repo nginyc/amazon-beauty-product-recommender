@@ -68,3 +68,9 @@ mlruns/
 
 # Log files
 *.log
+
+# LLM
+.claude/
+
+# Random Files
+tmp.ipynb
