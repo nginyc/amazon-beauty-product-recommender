@@ -1,0 +1,7 @@
+# Streamlit's default file watcher inspects every imported module, including
+# torch's internal C-extension modules, which can hard-crash the process
+# ("bus error") on macOS. Turning it off avoids that. You lose hot-reload on
+# file save (just restart the app instead).
+[server]
+fileWatcherType = "none"
+headless = true

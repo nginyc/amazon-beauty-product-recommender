@@ -1,0 +1,7 @@
+# The app reuses the project's existing environment. These are the direct deps.
+streamlit>=1.30
+torch<=2.5
+recbole==1.2.0
+numpy
+scipy<1.12
+pandas
