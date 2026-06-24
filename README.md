@@ -52,9 +52,15 @@ rmdir data/embeddings/embeddings
 
 Run the notebooks in this order: preparation → training. The EDA notebook is optional and can be run at any time.
 
-### 1. EDA (optional) — `eda/eda_beauty.ipynb`
+### 1. EDA (optional)
+
+#### `eda/eda_beauty.ipynb`
 
 Run all cells to load reviews, visualize user segments (warm / cold) and item segments (warm / cold) across temporally-ordered train/valid/test splits, and explore the data. This step creates no output files.
+
+#### `eda/eda_clothing-beauty.ipynb`
+
+Explores cross-category transfer potential between Beauty and Clothing — user overlap, rating correlation, and shared behavioral patterns across domains.
 
 ### 2. Process reviews — `preprocess/process-reviews-jsonl.ipynb`
 
@@ -83,7 +89,20 @@ Output files:
 - **Input:** `data/reviews.csv`, `data/items.csv`, and `data/embeddings/*.parquet`
 - **Outputs:** Atomic files under `data/beauty/`
 
-### 5. Train models
+### 5. Prepare cross-category atomic files — `preprocess/prepare-clothing-beauty-atomic-files.ipynb`
+
+Same pipeline as step 4 but includes both Beauty and Clothing categories. Adds a `target:float` column to the item file (1.0 = Beauty target items, 0.0 = Clothing).
+
+Output files:
+- `clothing-beauty.train.inter`, `clothing-beauty.valid.inter`, `clothing-beauty.test.inter`
+- `clothing-beauty.user` with warm (0) / cold (1) labels (`cold:float`)
+- `clothing-beauty.item` with `title`, `store`, `price`, `cold:float`, and `target:float`
+- `clip_image_embeddings.pt` — precomputed CLIP image embeddings for all items
+
+- **Input:** `data/reviews.csv`, `data/items.csv`, and `data/embeddings/*.parquet`
+- **Outputs:** Atomic files under `data/clothing-beauty/`
+
+### 6. Train models
 
 All training notebooks load the prepared atomic files via RecBole, train a model, print the best validation score (NDCG@20), and evaluate on the test set for NDCG@20, Recall@20, and MRR@20 — both overall and per user segment (warm / cold). Model checkpoints are saved to `saved/{Model}-{timestamp}.pth`.
 
@@ -113,4 +132,8 @@ Trains a **CBPR** (Content BPR) model — a VBPR-style two-pathway recommender t
 
 #### `train/train-bpr-clip-hybrid.ipynb`
 
-Trains a **BPR + CLIP multimodal late fusion** model — a standard BPR model whose predictions are blended at inference time with frozen CLIP text+image content scores via per-user z-score normalization. 
+Trains a **BPR + CLIP multimodal late fusion** model — item embeddings are initialized via a seeded random projection of CLIP multimodal (text+image) embeddings, then refined by BPR. Each user learns their own blend weight (alpha) controlling how much to trust BPR vs frozen CLIP content scores. At inference time, the two signal vectors are z-scored per user before blending.
+
+#### `train/train-bpr-clip-hybrid-cross.ipynb`
+
+Same architecture as `train-bpr-clip-hybrid.ipynb` but trained on the cross-category dataset (`clothing-beauty`). Uses the `target:float` item feature for target-domain awareness and upsamples Beauty interactions with `BEAUTY_WEIGHT = 10`. 
