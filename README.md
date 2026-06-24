@@ -62,6 +62,14 @@ Run all cells to load reviews, visualize user segments (warm / cold) and item se
 
 Explores cross-category transfer potential between Beauty and Clothing — user overlap, rating correlation, and shared behavioral patterns across domains.
 
+#### `eda/inter_data_review_signal.ipynb`
+
+Tests whether review text carries recommendation signal by encoding reviews with BGE and measuring cosine similarity of review pairs grouped by how much their ratings agree.
+
+#### `eda/eda1.ipynb`
+
+Explores cross-category user overlap and behavioral patterns across Beauty, Clothing, and Sports.
+
 ### 2. Process reviews — `preprocess/process-reviews-jsonl.ipynb`
 
 Loads gzipped JSONL review files for Beauty and Personal Care and Clothing, Shoes & Jewelry, filters by date range (2021–2022), and writes a clean intermediate CSV:
@@ -122,13 +130,13 @@ Trains a **BPR** model whose item embeddings are initialized via a seeded random
 
 Trains a **LightGCN** model — a graph convolutional network that learns user and item embeddings by propagating them over the user–item interaction graph.
 
-#### `train/train-mean-pool-title.ipynb`
+#### `train/train-lightgcn-bge-init.ipynb`
 
-Trains a **Mean-Pool Title** model — a custom non-learned baseline that encodes item titles with BGE sentence embeddings, represents each user as the mean of their training item embeddings, and scores via dot product. 
+Trains a **LightGCN** model whose item embeddings are warm-started from BGE title embeddings instead of random initialization.
 
-#### `train/train-cbpr.ipynb`
+#### `train/train-mean-pool-bge.ipynb`
 
-Trains a **CBPR** (Content BPR) model — a VBPR-style two-pathway recommender that combines collaborative user/item embeddings with BGE text content projected through a learned matrix. Scores are the sum of collaborative and content dot products.
+Trains a **Mean-Pool BGE** model — a custom non-learned baseline that encodes item titles with BGE sentence embeddings, represents each user as the mean of their training item embeddings, and scores via dot product.
 
 #### `train/train-bpr-clip-hybrid.ipynb`
 
@@ -136,4 +144,10 @@ Trains a **BPR + CLIP multimodal late fusion** model — item embeddings are ini
 
 #### `train/train-bpr-clip-hybrid-cross.ipynb`
 
-Same architecture as `train-bpr-clip-hybrid.ipynb` but trained on the cross-category dataset (`clothing-beauty`). Uses the `target:float` item feature for target-domain awareness and upsamples Beauty interactions with `BEAUTY_WEIGHT = 10`. 
+Same architecture as `train-bpr-clip-hybrid.ipynb` but trained on the cross-category dataset (`clothing-beauty`). Uses the `target:float` item feature for target-domain awareness and upsamples Beauty interactions with `BEAUTY_WEIGHT = 10`.
+
+## Demo
+
+### `demo.ipynb`
+
+Loads a trained BPRClipHybrid checkpoint and visualizes a sample user's interaction history, top-K recommendations, and ground-truth test items.
