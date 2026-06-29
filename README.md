@@ -4,7 +4,7 @@ This project studies Beauty product recommendation on [Amazon Reviews 2023](http
 
 72% of Beauty shoppers have fewer than 5 reviews in the category, most users are cold (fewer than 10 reviews), and the Beauty user-item matrix is approximately 99.9998% sparse.
 
-Contributors: @nginyc, @j0kene, @gabrielmsidik, @frankwang0113, @Yuds16
+Contributors: [@nginyc](https://github.com/nginyc), [@j0kene](https://github.com/j0kene), [@gabrielmsidik](https://github.com/gabrielmsidik), [@frankwang0113](https://github.com/frankwang0113), [@Yuds16](https://github.com/Yuds16)
 
 ## Approach
 
