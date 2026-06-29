@@ -4,6 +4,8 @@ This project studies Beauty product recommendation on [Amazon Reviews 2023](http
 
 72% of Beauty shoppers have fewer than 5 reviews in the category, most users are cold (fewer than 10 reviews), and the Beauty user-item matrix is approximately 99.9998% sparse.
 
+Contributors: @nginyc, @j0kene, @gabrielmsidik, @frankwang0113, @Yuds16
+
 ## Approach
 
 The project explores whether collaborative filtering improves when item representations are enriched with semantic, visual, and adjacent-category signals.
