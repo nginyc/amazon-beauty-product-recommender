@@ -58,10 +58,10 @@ log_tensorboard/
 mlflow.db
 mlruns/
 
-# Environment files 
-.env 
+# Environment files
+.env
 
-# Word docs 
+# Word docs
 *.doc
 *.docx
 ~$*.doc*
