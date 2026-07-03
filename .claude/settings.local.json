@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python -c \"import torch; print\\(torch.__version__\\); print\\('MPS:', torch.backends.mps.is_available\\(\\)\\)\")",
+      "Bash(cat /tmp/repro2.out | grep -i \"TRAIN OK\\\\|EXIT\\\\|Error\\\\|Traceback\"; echo \"=== full tail ===\"; tail -5 /tmp/repro2.out)"
+    ]
+  }
+}
